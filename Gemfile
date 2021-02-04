@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'bcrypt', '3.1.11'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'pry-rails'
