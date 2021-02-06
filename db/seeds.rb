@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+50.times do |n|
+  password = "password"
+  User.create!(name: Faker::Artist.name,
+               email: Faker::Internet.email,
+               password: password,
+               password_confirmation: password,
+               image: open("#{Rails.root}/db/fixtures/icon#{n}.png")
+               )
+end
