@@ -1,0 +1,11 @@
+<% @favorites.each do |favorite| %>
+  <p>お気に入りしたユーザー</p>
+  <p><%= favorite.user.name %></p>
+  <p><%= image_tag favorite.user.image.url %></p>
+  <p>お気に入りされたユーザー</p>
+  <p><%= favorite.picture.user.name %></p>
+  <p><%= image_tag favorite.picture.user.image.url %></p>
+  <p>お気に入りされたユーザーの投稿</p>
+  <p><%= favorite.picture.content %></p>
+  <p><%= image_tag favorite.picture.image.url %></p>
+<% end %>

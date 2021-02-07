@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Pictures</h1>
+<h1>一覧</h1>
 
 <table>
   <thead>
@@ -20,7 +18,7 @@
         <td><%= picture.user.name %></td>
         <td><%= link_to 'Show', picture %></td>
         <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: '削除してもいいですか？' } %></td>
       </tr>
     <% end %>
   </tbody>
