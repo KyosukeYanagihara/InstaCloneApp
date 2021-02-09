@@ -2,14 +2,15 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
   def new
     @user = User.new
+    render layout: "no_header"
   end
   
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to user_path(@user.id)
+      redirect_to new_session_path
     else
-      render :new
+      render :new, layout: "no_header"
     end
   end
 
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
 
   def edit
     if current_user.id == @user.id
-      render :edit
+      render :edit, layout: "no_header"
     else
       redirect_to pictures_path, notice: "権限がありません。"
     end

@@ -14,3 +14,70 @@
  *= require_self
  */
  @import "bootstrap";
+
+ * div{
+     margin: 0;
+     padding: 0;
+ }
+
+ li {
+    list-style-type: none
+ }
+
+ body {
+     background-color: #FAFAFA;
+ }
+
+#container {
+    width: 45%;
+    margin: 0 auto;
+}
+
+#new-container {
+    width: 400px;
+    margin: 0 auto;
+
+}
+
+ .logo-icon {
+     height: 50px;
+ }
+
+ header {
+     background-color: rgb(255, 255, 255);
+     height: 60px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     align-items: center;
+     border-bottom: 2px solid rgb(207, 207, 207);
+     width: 100%;
+     position: fixed;
+     top: 0;
+     a {
+         padding-left: 10px;
+     }
+ }
+
+ .user-icon {
+     height: 40px;
+     width: 40px;
+     border-radius: 50%;
+ }
+
+ .margin-top {
+     margin-top: 80px;
+ }
+ 
+.session-icon {
+    width: 200px;
+}
+
+.bottom {
+    margin: 20px
+}
+.image-user {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}

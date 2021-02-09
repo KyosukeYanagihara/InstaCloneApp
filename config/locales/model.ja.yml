@@ -3,6 +3,7 @@ ja:
     models:
       picture: 画像
       user: ユーザー
+      session: セッション
     attributes:
       picture:
         image: 写真

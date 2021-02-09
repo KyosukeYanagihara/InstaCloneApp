@@ -1,2 +1,7 @@
-<h1>新規登録</h1>
-<%= render 'form', user: @user %>
+<div class="color-white center">  
+  <%= image_tag("logo.png", class: "session-icon") %>
+  <%= render 'form', user: @user %>
+</div>
+<div class="color-white center padding-top">  
+   <p>アカウントをお持ちですか？<%= link_to "ログインする", new_session_path %></p>
+</div>

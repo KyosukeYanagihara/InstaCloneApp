@@ -1,8 +1,13 @@
-<h1>ログイン</h1>
-<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit "Log in" %>
-<% end %>
+<div class="color-white center">  
+  <%= image_tag("logo.png", class: "session-icon") %>
+  <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+    <div><%= f.label :email, "メールアドレス" %></div>
+    <div><%= f.email_field :email %></div>
+    <div><%= f.label :password, "パスワード" %></div>
+    <div><%= f.password_field :password %></div>
+    <div><%= f.submit "ログイン", class: "bottom btn btn-primary" %></div>
+  <% end %>
+</div>
+<div class="color-white center padding-top">
+  <p>アカウントをおもちでないですか？<%= link_to "登録する", new_user_path %></p>
+</div>

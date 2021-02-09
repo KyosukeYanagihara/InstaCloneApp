@@ -1,29 +1,32 @@
-<%= form_with(model: picture, local: true, url: choose_new_or_edit ) do |form| %>
-  <% if picture.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+<div class="margin-top color-white">
+  <%= form_with(model: picture, local: true, url: choose_new_or_edit ) do |form| %>
+    <div class="center">
+      <% if picture.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(picture.errors.count, "エラー") %></h2>
 
-      <ul>
-      <% picture.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% picture.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
+      <div class="field">
+        <p><%= form.label :image %></p>
+        <%= image_tag(@picture.image.url, class: "main-image") if @picture.image && @picture.image.url %>
+        <%= form.file_field :image %>
+        <%= form.hidden_field :image_cache %>
+      </div>
+
+      <div class="field content">
+        <p><%= form.label :content %></p>
+        <%= form.text_area :content %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
-    <%= form.file_field :image %>
-    <%= form.hidden_field :image_cache %>
-  </div>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
